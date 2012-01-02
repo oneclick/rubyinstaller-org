@@ -1,0 +1,50 @@
+/*
+	NAV
+*/
+#nav {
+	margin:26px 0 0;
+	font-weight:bold;
+}
+#nav a {
+	color:#AD050A;
+	display:block;
+	font-size:18px;
+	text-decoration:none;
+	margin:0 12px;
+}
+#nav a:hover {
+	text-decoration:none;
+	border-bottom:1px solid #AD050A;
+}
+#nav .current a, #nav .current a:hover {
+	text-decoration:none;
+	border-bottom:1px dotted #AD050A;
+	cursor:default
+}
+
+#sidenav {
+	font-size:14px;
+	line-height:32px;
+	padding:32px 0 20px;
+	height:390px;
+	margin-right:20px;
+}
+#sidenav li {
+	display:block;
+	padding:0 10px;
+	height:35px;
+	line-height:35px;
+	font-size:14px;
+}
+#sidenav li a:hover {
+/*	font-weight:bold;
+	background-color:#eee;*/
+}
+#sidenav li.current {
+	background-color:#FFF;
+}
+#sidenav li.current, #sidenav li.current a, #sidenav li.current a:hover {
+	cursor:default;
+	color:#848383;
+	text-decoration:none;
+}

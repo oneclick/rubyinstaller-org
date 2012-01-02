@@ -1,0 +1,163 @@
+/*
+	STORY
+*/
+.story {
+	margin:0 20px 20px 0;
+	line-height:21px;
+}
+.story h3 {
+	font-size:17px;
+	color:#960407;
+	margin:0 0 6px;
+}
+.story p {
+	margin:0 0 9px;
+}
+.story a {
+	color:#AD050A;
+	text-decoration:none;
+}
+.story a:hover {
+	text-decoration:underline;
+}
+.story footer {
+	font-size:12px;
+	color:#848383;
+}
+.story footer time {
+	margin:0 20px 0 0;
+}
+
+/* TAGS */
+.tag {
+	display:inline-block;
+	text-transform:lowercase;
+	margin:0 0 5px;
+	background:#FFF;
+	color:#666;
+	padding:3px 7px 5px;
+	font-size:12px;
+	line-height:12px;
+	letter-spacing:1px;
+	-moz-border-radius: 2px; /* FF1+ */
+  -webkit-border-radius: 2px; /* Saf3-4, iOS 1+, Android 1.5+ */
+          border-radius: 2px; /* Opera 10.5, IE9, Saf5, Chrome, FF4 */
+    -moz-box-shadow: 0px 0px 1px #666; /* FF3.5+ */
+  -webkit-box-shadow: 0px 0px 1px #666; /* Saf3.0+, Chrome */
+          box-shadow: 0px 0px 1px #666; /* Opera 10.5, IE9, Chrome 10+ */
+		
+}
+.tag-installer { background:#d50509;}
+.tag-sevenzip { background:#1b72b8; }
+.tag-doc { background:#54ad22; }
+.tag-installer, .tag-sevenzip, .tag-doc { color:#FFF; font-weight:normal; }
+.tag-devkit { background:#fcc928; color:#333; }
+
+a.tag:hover {
+	text-decoration:underline !important;
+}
+
+/* TAGS DEFINITION */
+dl.tags p {
+	font-size:12px;
+	margin:0 !important;
+}
+.sub .colB dl.tags dd {
+	color:#666;
+	margin:0 0 20px;
+}
+
+/* 
+	RUBY RELEASE 
+*/
+.releases {
+	margin:0 0 30px;
+}
+.release {
+	overflow:hidden;
+	zoom:1;
+	padding:20px 15px 15px 0;
+	border-top:1px solid #ddd;
+	-moz-border-radius: 3px; /* FF1+ */
+  -webkit-border-radius: 3px; /* Saf3-4, iOS 1+, Android 1.5+ */
+          border-radius: 3px; /* Opera 10.5, IE9, Saf5, Chrome, FF4 */
+}
+.release:first-child {
+	border-top:0 none;
+}
+#featured.release {
+	border:1px solid #ddd;
+	margin-bottom:30px;
+	padding-left:15px;
+	-moz-border-radius: 3px; /* FF1+ */
+  -webkit-border-radius: 3px; /* Saf3-4, iOS 1+, Android 1.5+ */
+          border-radius: 3px; /* Opera 10.5, IE9, Saf5, Chrome, FF4 */	
+}
+.release > p {
+	margin:0 0 10px;
+}
+.release ul { margin:0 0 0 1px; }
+.release li {
+	display:inline;
+}
+.release .notes {
+	border:1px solid #ccc;
+	margin:10px 0 0;
+	background:#eee;
+	color:#444;
+	-moz-border-radius: 3px; /* FF1+ */
+  -webkit-border-radius: 3px; /* Saf3-4, iOS 1+, Android 1.5+ */
+          border-radius: 3px; /* Opera 10.5, IE9, Saf5, Chrome, FF4 */	
+}
+.js .release .notes {
+	display:none;
+}
+.js #featured.release .notes {
+	display:block;
+}
+.release .notes {
+	clear:both;
+}
+.release header {
+	padding:1px 0;
+	overflow:hidden;
+	zoom:1;
+}
+.release .notes .trigger {
+	border:0 none;
+	width:100%;
+	text-align:center;
+	font-size:12px;
+	background:#FFF;
+	padding:6px 0 5px;
+	color:#666;
+	text-transform:lowercase;
+}
+.release .notes .trigger:hover {
+	color:#333;
+}
+.release h2 {
+	font-size:18px;
+	font-weight:normal;
+}
+#featured.release h2 {
+	font-size:22px;
+}
+
+.release h2, .release ul {
+	display:block;
+	float:left;
+	margin-bottom:0;
+}
+.release ul {
+	margin:0 0 0 20px;
+}
+#featured.release h2, #featured.release ul {
+	float:none;
+}
+#featured.release ul {
+	margin:15px 0 0;
+}
+.release .tag {
+	margin:0 5px 0 0;
+}

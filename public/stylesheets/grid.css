@@ -1,0 +1,58 @@
+/*
+	GRID
+*/
+.container {
+	margin:0 auto;
+	width:950px;
+}
+.cols {
+	overflow:hidden;
+	zoom:1;
+}
+.col {
+	float:left
+}
+.last {
+	margin-right:0 !important;
+}
+
+/* Standard Cols AB layout */
+#main.cols .col {
+	padding:25px 0 0;
+}
+.colA {
+	width:630px;
+	margin:0 10px 0 0;
+}
+.cols-alt .colA {
+	width:570px;
+	margin:0;
+}
+.colB {
+	width:310px;
+}
+.cols-alt .colB {
+	margin: 0 0 0 30px;
+	width:320px;
+}
+
+/* Sub Cols AB layout with sidenav */
+.sub .cols-sidenav .colA {
+	width:230px;
+}
+.sub .cols-sidenav .colB {
+	padding-left:40px;
+	width:670px;
+}
+
+/* Features Col */
+#features .col {
+	width:310px;
+	margin-right:10px;
+}
+
+/* Footer Col */
+#footer .col {
+	width:150px;
+	margin-right:10px;
+}

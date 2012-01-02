@@ -1,0 +1,27 @@
+/*
+	HEADINGS
+*/
+h1, h2, h3, h4, h5, h6 {
+	font-weight:bold;
+	color:#111;
+}
+
+#graphic h1 {
+	font-size:33px;
+	font-weight:bold;
+	margin:20px 0 10px;
+}
+
+h2 {
+	font-size:25px;
+	font-weight:bold;
+	margin:0 0 14px;
+}
+
+.colB h2 {
+	font-size:27px;
+	line-height:40.5px;
+	color:#111;
+	margin:0 0 20px;
+	border-bottom:1px solid #ccc;
+}

@@ -1,0 +1,77 @@
+/*
+	GRAPHICS
+*/
+#shell {
+	background: #FFF url('/images/bg.png') repeat-x scroll top left
+}
+#shell.sub {
+	background-image:url('/images/bg_sub.png');
+}
+
+/* SIDE NAV */
+#sidenav {
+	background: url('/images/bg_subnav.png') no-repeat scroll top right;
+	
+}
+#sidenav ul {
+	background: url('/images/line_submenu.png') no-repeat scroll right top;
+	padding:1px 0 0;
+}
+#sidenav li {
+	background: url('/images/line_submenu.png') no-repeat scroll right bottom;
+}
+
+/* ICONS SPRITE */
+.icon {
+	background: url('/images/sprite-icons.jpg') no-repeat top left;
+}
+.icon-contribute {
+	background-position:0 0;
+}
+.icon-mailinglist {
+	background-position:0 -110px;
+}
+.icon-faq {
+	background-position:0 -220px;
+}
+#features .icon {
+	height:60px;
+}
+
+/* BUTTON SPRITE */
+.btn {
+	background: url('/images/sprite-btn.gif') no-repeat top left;
+	display:inline-block;
+	text-decoration:none;
+	text-align:center;
+}
+.btn-download {
+	background-position:0 -220px;
+	width:229px;
+}
+.btn-download:hover {
+	background-position:0 -305px;
+}
+.btn-addons {
+	background-position:0 0;
+	width:209px;
+	margin:0 0 0 10px;
+}
+.btn-addons:hover {
+	background-position:0 -85px;
+}
+.btn-addons, .btn-download {
+	height:85px;
+	color:#FFF;
+	font-size:30px;
+	line-height:81px;
+	font-weight:bold;
+}
+
+#graphic {
+	background: url('/images/gembox.png') no-repeat scroll top right;
+	overflow:hidden;
+}
+.sub #graphic {
+	background-image: url('/images/gembox_sub.png');
+}

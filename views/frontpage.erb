@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <%= erb :_headers %>
+</head>
+<body>
+  <div id="shell">
+    <%= erb :_navigation %>
+
+    <div id="graphic" class="container">
+      <div class="inner">
+        <h1 class="fR">Easiest way to install Ruby</h1>
+        <p>This is a <b>self-contained installer</b> that includes the <b>Ruby language</b>, dozens of <b>popular extensions</b> and <b>packages</b>, an execution environment, important <b>documentation</b>, and more.</p>
+        <a href="/downloads" class="btn btn-download">Download</a>
+        <a href="/downloads" class="btn btn-addons ">Add-ons</a>
+      </div>
+    </div>
+
+    <div id="main" class="container cols">
+      <%= yield %>
+    </div>
+
+    <ul id="features" class="container cols">
+      <li class="col">
+        <a href="http://wiki.github.com/oneclick/rubyinstaller" class="icon icon-contribute">
+          <h3>Contribute</h3>
+          <p>How can I help the project?</p>
+        </a>
+      </li>
+      <li class="col">
+        <a href="http://groups.google.com/group/rubyinstaller" class="icon icon-mailinglist ">
+          <h3>Mailing List</h3>
+          <p>How can I stay up-to-date?</p>
+        </a>
+      </li>
+      <li class="col last">
+        <a href="http://wiki.github.com/oneclick/rubyinstaller" class="icon icon-faq">
+          <h3>FAQ</h3>
+          <p>Frequently Asked Questions.</p>
+        </a>
+      </li>
+    </ul>
+
+    <%= erb :_footer %>
+  </div>
+  <script src="/javascripts/script.js"></script>
+</body>
+</html>

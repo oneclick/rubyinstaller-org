@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <%= erb :_headers %>
+</head>
+<body>
+  <div id="shell" class="sub">
+    <%= erb :_navigation %>
+
+    <div id="graphic" class="container">
+      <div class="inner">
+        <h1 class="fR"><%= title %></h1>
+      </div>
+    </div>
+
+    <div id="main" class="container cols <%= container %>">
+      <%= yield %>
+    </div>
+
+    <%= erb :_footer %>
+  </div>
+  <script src="/javascripts/script.js"></script>
+</body>
+</html>

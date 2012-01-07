@@ -1,5 +1,6 @@
 require "sinatra/base"
 require "helpers"
+require "models"
 
 class Website < Sinatra::Base
   include Helpers
@@ -11,6 +12,12 @@ class Website < Sinatra::Base
     require "sinatra/reloader"
     register Sinatra::Reloader
     also_reload "#{root}/lib/helpers.rb"
+    also_reload "#{root}/lib/models.rb"
+
+    # FIXME: in development, reload release information on every request
+    before do
+      Release.reload!
+    end
   end
 
   get "/" do
@@ -28,7 +35,11 @@ class Website < Sinatra::Base
     section :downloads
     title "Downloads"
 
-    erb :releases, :locals => { :releases => [] }
+    # Build list of featured releases, first Ruby then DevKit
+    releases = Release.featured_ruby
+    releases.concat Release.featured_devkit
+
+    erb :releases, :locals => { :releases => releases }
   end
 
   get "/downloads/archives" do

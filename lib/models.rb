@@ -92,6 +92,13 @@ class Release < Struct.new(:package, :version, :date, :files, :notes)
     FEATURED.collect { |version| selected[version] }.compact
   end
 
+  # Public: Retrieve the last 'devkit' package available.
+  #
+  # Returns a Release Array with one single element.
+  def self.featured_devkit
+    [all.find { |release| release.package == "devkit" }]
+  end
+
   class File < Struct.new(:filename, :size, :md5, :kind)
     private_class_method :new
 

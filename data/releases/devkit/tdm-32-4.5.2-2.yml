@@ -1,0 +1,13 @@
+---
+package: devkit
+version: tdm-32-4.5.2
+date: 2011-12-29
+files:
+  - filename: DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe
+    size: 22975511
+    md5: 4bf8f2dd1d582c8733a67027583e19a6 
+    kind: devkit
+notes: |
+  This version includes updates to the `dk.rb` installation script that better handle the DevKit's installation directory search behavior and fixes GH #80 issue
+
+  https://github.com/oneclick/rubyinstaller/issues/80

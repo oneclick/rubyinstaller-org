@@ -1,0 +1,37 @@
+---
+package: ruby
+version: 1.8.7-p357
+date: 2011-12-28
+files:
+  - filename: rubyinstaller-1.8.7-p357.exe
+    size: 12258104
+    md5: 4dbf0ed7b22ade6b89b39acd60b418da
+    kind: installer
+  - filename: ruby-1.8.7-p357-i386-mingw32.7z
+    size: 5366999
+    md5: 8cb0d0cfef0405f936980014760ae3e6
+    kind: binary
+  - filename: ruby-1.8.7-p357-doc-chm.7z
+    size: 3827156
+    md5: 18746cd05f84bc413af06f54a3e6d313
+    kind: documentation
+notes: |
+  Ruby's own announcement here:
+
+  http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/391606
+  http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/391607
+
+  RubyInstaller own set of improvements:
+
+  * Enhancements:
+    * Upgraded Ruby 1.8.7 to patchlevel 357
+    * Upgraded rb-readline to version 0.4.2
+    * Upgraded Tcl/Tk to version 8.5.11
+    * Upgraded RubyGems to 1.8.12 on all versions of Ruby
+    * Upgraded OpenSSL to version 1.0.0e
+
+  * Bugfixes:
+    * Correct DevKit install path search behavior. GH-80
+    * Avoid forcing users to clone with autocrlf=false. GH-71, GH-78 and GH-84
+    * Correct extraction of SHA1 based tarballs
+    * No longer leak LDFLAGS into sandboxed rbconfig.rb. GH-85

@@ -1,0 +1,32 @@
+---
+package: ruby
+version: 1.9.3-p0
+date: 2011-10-31
+files:
+  - filename: rubyinstaller-1.9.3-p0.exe
+    size: 12258104
+    md5: 4dbf0ed7b22ade6b89b39acd60b418da
+    kind: installer
+  - filename: ruby-1.9.3-p0-i386-mingw32.7z
+    size: 5366999
+    md5: 8cb0d0cfef0405f936980014760ae3e6
+    kind: binary
+  - filename: ruby-1.9.3-p0-doc-chm.7z
+    size: 3827156
+    md5: 18746cd05f84bc413af06f54a3e6d313
+    kind: documentation
+notes: |
+  Ruby's own announcement here:
+
+  http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-core/40527
+
+  RubyInstaller own set of modifications
+
+  * Enhancements:
+    * Add Ruby 1.9.3-p0 as default for `ruby19` task
+    * Upgraded rb-readline to version 0.4.1
+    * Upgraded libffi to version 3.0.10
+    * Upgraded OpenSSL to version 1.0.0e
+
+  * Bugfixes:
+    * No longer leak LDFLAGS into sandboxed rbconfig.rb. GH-85

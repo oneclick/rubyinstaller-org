@@ -152,5 +152,33 @@ class Release
       @md5      = md5
       @kind     = kind
     end
+
+    # Public: Identify the file as a installer package.
+    #
+    # Returns true or false.
+    def installer?
+      @kind == :installer
+    end
+
+    # Public: Identify the file as binary package (7-zip).
+    #
+    # Returns true or false.
+    def binary?
+      @kind == :binary
+    end
+
+    # Public: Identify the file as documentation package (CHM).
+    #
+    # Returns true or false.
+    def documentation?
+      @kind == :documentation
+    end
+
+    # Public: Identify the file as DevKit package (SFX)
+    #
+    # Returns true or false.
+    def devkit?
+      @kind == :devkit
+    end
   end
 end

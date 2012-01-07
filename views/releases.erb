@@ -1,34 +1,21 @@
 <% container "alt" %>
 
-<%# FIXME: Improve rendering by using a decorator for Release %>
 <div class="col colA">
   <section class="releases">
     <% releases.each do |release| %>
     <article class="release">
       <header>
-        <h2><%= "#{release.package} #{release.version}" %></h2>
+        <h2><%= release.title %></h2>
         <!-- TODO: Show release date using time -->
         <!-- FIXME: move ul outside of header to give room for release date -->
         <ul>
-          <% release.files.each do |file| %>
-          <li><a href="<%= file.filename %>" class="tag"><%= file.kind %></a></li>
+          <% release.links.each do |link| %>
+          <li><%= link.to_html %></li>
           <% end %>
-          <li><a href="" class="tag trigger">Show notes</a></li>
         </ul>
       </header>
       <div class="notes">
-        <%# FIXME: Position of elements in pre is off %>
-        <pre>
-          <strong>MD5:</strong>
-          <% release.files.each do |file| %>
-          <%= "#{file.md5} *#{file.filename}" %>
-          <% end %>
-          <% unless release.notes.empty? %>
-          <hr />
-          <strong>Notes:</strong>
-          <%= release.notes %>
-          <% end %>
-        </pre>
+        <pre><%= release.notes %></pre>
       </div>
     </article>
     <% end %>

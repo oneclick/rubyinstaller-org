@@ -1,6 +1,7 @@
 require "sinatra/base"
 require "helpers"
 require "models"
+require "decorators"
 
 class Website < Sinatra::Base
   include Helpers
@@ -13,6 +14,7 @@ class Website < Sinatra::Base
     register Sinatra::Reloader
     also_reload "#{root}/lib/helpers.rb"
     also_reload "#{root}/lib/models.rb"
+    also_reload "#{root}/lib/decorators.rb"
 
     # FIXME: in development, reload release information on every request
     before do
@@ -39,7 +41,9 @@ class Website < Sinatra::Base
     releases = Release.featured_ruby
     releases.concat Release.featured_devkit
 
-    erb :releases, :locals => { :releases => releases }
+    decorated = releases.map { |r| Decorators::Release.new(r) }
+
+    erb :releases, :locals => { :releases => decorated }
   end
 
   get "/downloads/archives" do

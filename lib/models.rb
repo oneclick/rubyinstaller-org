@@ -1,8 +1,10 @@
 require "psych"
 require "time"
 
-class Release < Struct.new(:package, :version, :date, :files, :notes)
+class Release
   FEATURED = ["1.9.3", "1.9.2", "1.8.7"].freeze
+
+  attr_reader :package, :version, :date, :files, :notes
 
   private_class_method :new
 
@@ -99,7 +101,26 @@ class Release < Struct.new(:package, :version, :date, :files, :notes)
     [all.find { |release| release.package == "devkit" }]
   end
 
-  class File < Struct.new(:filename, :size, :md5, :kind)
+  # Internal: Build a Release instance.
+  #
+  # package - The String that identifies the type of package.
+  # version - The String used to indicate the version.
+  # date    - The Time when the release was made.
+  # files   - The Array of File included in this release.
+  # notes   - The String containg notes about the release.
+  #
+  # Returns a Release instance.
+  def initialize(package, version, date, files, notes)
+    @package = package
+    @version = version
+    @date    = date
+    @files   = files
+    @notes   = notes
+  end
+
+  class File
+    attr_reader :filename, :size, :md5, :kind
+
     private_class_method :new
 
     # Internal: Build a Release File using provided hash contents. Used by
@@ -113,6 +134,21 @@ class Release < Struct.new(:package, :version, :date, :files, :notes)
       kind     = data.fetch("kind").to_sym
 
       new filename, size, md5, kind
+    end
+
+    # Internal: Build a File instance.
+    #
+    # filename - The String used to represent the file of a Release.
+    # size     - The Integer that represents the size (in bytes) of the file.
+    # md5      - The String that serves as checksum.
+    # kind     - The Symbol that identifies the type of File.
+    #
+    # Returns a Release instance.
+    def initialize(filename, size, md5, kind)
+      @filename = filename
+      @size     = size
+      @md5      = md5
+      @kind     = kind
     end
   end
 end

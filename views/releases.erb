@@ -1,105 +1,32 @@
 <% container "alt" %>
 
-      <div class="col colA">
-        <h2 class="fR">Featured</h2>
-        <article id="featured" class="release">
-          <header>
-            <h2>Ruby 1.9-2-p180</h2>
-            <ul>
-              <li><a href="http://rubyforge.org/frs/download.php/74298/rubyinstaller-1.9.2-p180.exe" class="tag tag-installer">Installer</a></li>
-              <li><a href="http://rubyforge.org/frs/download.php/74299/ruby-1.9.2-p180-i386-mingw32.7z" class="tag tag-sevenzip">7-zip</a></li>
-              <li><a href="http://rubyforge.org/frs/download.php/74300/ruby-1.9.2-p180-doc-chm.7z" class="tag tag-doc">Documentation</a></li>
-              <li><a href="" class="tag trigger">Hide notes</a></li>
-            </ul>
-          </header>
-          <div class="notes">
-            <pre>
-<strong>Notes :</strong>
-Ruby 1.8.7-p334 release
-
-MD5 for verification:
-
-3cd42e470f4ebd16310498c63bd52aeb *ruby-1.8.7-p334-doc-chm.7z
-bc16f57f086915aaa8ad4116cb3fb7c2 *ruby-1.8.7-p334-i386-mingw32.7z
-64e30e63e16028282fcfe3ec57b561dc *rubyinstaller-1.8.7-p334.exe
-
-<hr />
-<strong>Changements :</strong>
-Read Ruby own announcement for details:
-
-http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/378696
-
-Enhancements from RubyInstaller:
-* Upgraded RubyGems to 1.5.2 on all versions of Ruby
-* Upgraded rb-readline to version 0.4.0
-            </pre>
-          </div>
-        </article>
-
-        <section class="releases">
-          <article class="release">
-            <header>
-              <h2>Ruby 1.8.7-p334</h2>
-              <ul>
-                <li><a href="" class="tag tag-installer">Installer</a></li>
-                <li><a href="" class="tag tag-sevenzip">7-zip</a></li>
-                <li><a href="" class="tag tag-doc">Documentation</a></li>
-              </ul>
-            </header>
-          </article>
-          <article class="release">
-            <header>
-              <h2>Ruby 1.8.7-p302</h2>
-              <ul>
-                <li><a href="" class="tag tag-installer">Installer</a></li>
-                <li><a href="" class="tag tag-sevenzip">7-zip</a></li>
-                <li><a href="" class="tag tag-doc">Documentation</a></li>
-                <li><a href="" class="tag trigger">Show notes</a></li>
-              </ul>
-            </header>
-            <div class="notes">
-              <pre>
-Hello Luis
-              </pre>
-            </div>
-          </article>
-
-          <article class="release">
-            <header>
-              <h2>Ruby 1.8.7-p202</h2>
-              <ul>
-                <li><a href="" class="tag tag-installer">Installer</a></li>
-                <li><a href="" class="tag tag-sevenzip">7-zip</a></li>
-                <li><a href="" class="tag tag-doc">Documentation</a></li>
-                <li><a href="" class="tag trigger">Show notes</a></li>
-              </ul>
-            </header>
-            <div class="notes">
-              <pre>
-<strong>Changements :</strong>
-Read Ruby own announcement for details:
-
-http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/378696
-
-Enhancements from RubyInstaller:
-* Upgraded RubyGems to 1.5.2 on all versions of Ruby
-* Upgraded rb-readline to version 0.4.0
-              </pre>
-            </div>
-          </article>
-
-          <article class="release">
-            <header>
-              <h2>Ruby 1.8.7-p102</h2>
-              <ul>
-                <li><a href="" class="tag tag-installer">Installer</a></li>
-                <li><a href="" class="tag tag-sevenzip">7-zip</a></li>
-                <li><a href="" class="tag tag-doc">Documentation</a></li>
-              </ul>
-            </header>
-          </article>
-        </section>
+<%# FIXME: Improve rendering by using a decorator for Release %>
+<div class="col colA">
+  <section class="releases">
+    <% releases.each do |release| %>
+    <article class="release">
+      <header>
+        <h2><%= "#{release.package} #{release.version}" %></h2>
+        <!-- TODO: Show release date using time -->
+        <!-- FIXME: move ul outside of header to give room for release date -->
+        <ul>
+          <% release.files.each do |file| %>
+          <li><a href="<%= file.filename %>" class="tag"><%= file.kind %></a></li>
+          <% end %>
+          <% unless release.notes.empty? %>
+          <li><a href="" class="tag trigger">Show notes</a></li>
+          <% end %>
+        </ul>
+      </header>
+      <% unless release.notes.empty? %>
+      <div class="notes">
+        <pre><%= release.notes %></pre>
       </div>
+      <% end %>
+    </article>
+    <% end %>
+  </section>
+</div>
 
       <div class="col colB">
         <h3>Download issues?</h3>

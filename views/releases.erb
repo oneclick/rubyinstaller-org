@@ -13,16 +13,23 @@
           <% release.files.each do |file| %>
           <li><a href="<%= file.filename %>" class="tag"><%= file.kind %></a></li>
           <% end %>
-          <% unless release.notes.empty? %>
           <li><a href="" class="tag trigger">Show notes</a></li>
-          <% end %>
         </ul>
       </header>
-      <% unless release.notes.empty? %>
       <div class="notes">
-        <pre><%= release.notes %></pre>
+        <%# FIXME: Position of elements in pre is off %>
+        <pre>
+          <strong>MD5:</strong>
+          <% release.files.each do |file| %>
+          <%= "#{file.md5} *#{file.filename}" %>
+          <% end %>
+          <% unless release.notes.empty? %>
+          <hr />
+          <strong>Notes:</strong>
+          <%= release.notes %>
+          <% end %>
+        </pre>
       </div>
-      <% end %>
     </article>
     <% end %>
   </section>

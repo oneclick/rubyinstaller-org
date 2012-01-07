@@ -3,6 +3,8 @@ require "time"
 
 class Release
   FEATURED = ["1.9.3", "1.9.2", "1.8.7"].freeze
+  RUBY     = "Ruby".freeze
+  DEVKIT   = "DevKit".freeze
 
   attr_reader :package, :version, :date, :files, :notes
 
@@ -77,7 +79,7 @@ class Release
 
     all.each do |release|
       # skip non-ruby packages
-      next unless release.package == "ruby"
+      next unless release.package == RUBY
 
       # grab only the X.Y.Z part of the version
       version = release.version.split("-").first
@@ -98,7 +100,7 @@ class Release
   #
   # Returns a Release Array with one single element.
   def self.featured_devkit
-    [all.find { |release| release.package == "devkit" }]
+    [all.find { |release| release.package == DEVKIT }]
   end
 
   # Internal: Build a Release instance.

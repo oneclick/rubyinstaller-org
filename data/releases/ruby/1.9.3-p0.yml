@@ -1,5 +1,5 @@
 ---
-package: ruby
+package: Ruby
 version: 1.9.3-p0
 date: 2011-10-31
 files:

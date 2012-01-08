@@ -1,6 +1,6 @@
 module Decorators
   class Release
-    BASE_URL = "http://cdn.rubyinstaller.org/archives/%s/%s".freeze
+    DOWNLOAD_URL = "/downloads/%s/%s".freeze
 
     def initialize(release)
       @release = release
@@ -68,7 +68,7 @@ module Decorators
         @release.version
       end
 
-      BASE_URL % [base, file.filename]
+      DOWNLOAD_URL % [base, file.filename]
     end
   end
 

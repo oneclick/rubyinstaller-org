@@ -18,7 +18,7 @@ module Decorators
       links = []
 
       @release.files.each do |file|
-        url = BASE_URL % [@release.version, file.filename]
+        url = file_url(file)
         text, css = file_text_class(file)
 
         links << Link.new(url, text, "tag #{css}")
@@ -58,6 +58,17 @@ module Decorators
       when file.devkit?
         ["SFX", "tag-devkit"]
       end
+    end
+
+    def file_url(file)
+      # DevKit do not use version as directory separator
+      base = if file.devkit? && @release.package == ::Release::DEVKIT
+        "devkits"
+      else
+        @release.version
+      end
+
+      BASE_URL % [base, file.filename]
     end
   end
 

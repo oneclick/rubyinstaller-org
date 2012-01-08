@@ -182,3 +182,6 @@ class Release
     end
   end
 end
+
+# initial load of releases
+Release.reload!

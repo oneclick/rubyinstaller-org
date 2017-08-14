@@ -1,6 +1,12 @@
 # rubyinstaller-org
 
-This repository holds the source code for rubyinstaller.org website.
+## Important
+
+This codebase is an unfinished attempt to build a Sinatra-based application for the RubyInstaller project.
+The live website is based on this repository: https://github.com/oneclick/rubyinstaller.org-website
+
+If you want to report issues with current site, please use it's
+[issue tracker](https://github.com/oneclick/rubyinstaller.org-website/issues).
 
 ## Getting Started
 
